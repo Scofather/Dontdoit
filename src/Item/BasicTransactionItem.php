@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace Clear01\Gpc\Generator\Item;
 
-use Brick\Math\BigDecimal;
+use Brick\Math\BigInteger;
 use Clear01\Gpc\Generator\ITransactionGpcItem;
 use Money\Money;
 
@@ -17,16 +17,16 @@ class BasicTransactionItem implements ITransactionGpcItem
 	const PAYMENT_TYPE_DEBIT = 1;
 	const PAYMENT_TYPE_CREDIT = 2;
 
-	/** @var BigDecimal */
+	/** @var BigInteger */
 	protected $accountNumber;
 
-	/** @var BigDecimal */
+	/** @var BigInteger */
 	protected $oppositeAccountNumber;
 
 	/** @var int See self::SOURCE_*  */
 	protected $source;
 
-	/** @var BigDecimal */
+	/** @var BigInteger */
 	protected $transactionId;
 
 	/** @var Money */
@@ -35,7 +35,7 @@ class BasicTransactionItem implements ITransactionGpcItem
 	/** @var int See self::PAYMENT_TYPE_*  */
 	protected $paymentType;
 
-	/** @var BigDecimal */
+	/** @var BigInteger */
 	protected $variableSymbol;
 
 	/** @var int */
@@ -44,7 +44,7 @@ class BasicTransactionItem implements ITransactionGpcItem
 	/** @var int */
 	protected $constantSymbol;
 
-	/** @var BigDecimal */
+	/** @var BigInteger */
 	protected $specificSymbol;
 
 	/** @var \DateTimeInterface */
@@ -54,16 +54,16 @@ class BasicTransactionItem implements ITransactionGpcItem
 	protected $oppositeName;
 
 	public function __construct(
-		BigDecimal $accountNumber,
-		BigDecimal $oppositeAccountNumber,
+		BigInteger $accountNumber,
+		BigInteger $oppositeAccountNumber,
 		int $source,
-		BigDecimal $transactionId,
+		BigInteger $transactionId,
 		Money $amount,
 		int $paymentType,
-		BigDecimal $variableSymbol,
+		BigInteger $variableSymbol,
 		int $oppositeBankCode,
 		int $constantSymbol,
-		BigDecimal $specificSymbol,
+		BigInteger $specificSymbol,
 		\DateTimeInterface $date,
 		string $oppositeName
 	) {
@@ -81,12 +81,12 @@ class BasicTransactionItem implements ITransactionGpcItem
 		$this->transactionId = $transactionId;
 	}
 
-	public function getAccountNumber(): BigDecimal
+	public function getAccountNumber(): BigInteger
 	{
 		return $this->accountNumber;
 	}
 
-	public function getOppositeAccountNumber(): BigDecimal
+	public function getOppositeAccountNumber(): BigInteger
 	{
 		return $this->oppositeAccountNumber;
 	}
@@ -106,7 +106,7 @@ class BasicTransactionItem implements ITransactionGpcItem
 		return $this->paymentType;
 	}
 
-	public function getVariableSymbol(): BigDecimal
+	public function getVariableSymbol(): BigInteger
 	{
 		return $this->variableSymbol;
 	}
@@ -121,7 +121,7 @@ class BasicTransactionItem implements ITransactionGpcItem
 		return $this->constantSymbol;
 	}
 
-	public function getSpecificSymbol(): BigDecimal
+	public function getSpecificSymbol(): BigInteger
 	{
 		return $this->specificSymbol;
 	}
@@ -136,7 +136,7 @@ class BasicTransactionItem implements ITransactionGpcItem
 		return $this->oppositeName;
 	}
 
-	public function getTransactionId(): BigDecimal
+	public function getTransactionId(): BigInteger
 	{
 		return $this->transactionId;
 	}

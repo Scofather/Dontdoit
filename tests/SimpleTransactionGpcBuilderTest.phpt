@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 require(__DIR__ . '/../vendor/autoload.php');
 
-use Brick\Math\BigDecimal;
+use Brick\Math\BigInteger;
 use Clear01\Gpc\Generator\Item\BasicTransactionItem;
 use Tester\Assert;
 
@@ -32,16 +32,16 @@ class SimpleTransactionGpcBuilderTest extends Tester\TestCase
 		$builder = $this->builderFactory->create();
 
 		$simpleTransactionItem = new BasicTransactionItem(
-			BigDecimal::of(1234567890),
-			BigDecimal::of(9876543210),
+			BigInteger::of(1234567890),
+			BigInteger::of(9876543210),
 			BasicTransactionItem::SOURCE_ONE_TIME,
-			BigDecimal::of(123456),
+			BigInteger::of(123456),
 			$this->moneyParser->parse('1000', 'CZK'),
 			BasicTransactionItem::PAYMENT_TYPE_CREDIT,
-			BigDecimal::of(4564564),
+			BigInteger::of(4564564),
 			300,
 			0,
-			BigDecimal::of(0),
+			BigInteger::of(0),
 			new \DateTime('2019-11-18 03:00:00'),
 			'TOMAS FUK'
 		);
