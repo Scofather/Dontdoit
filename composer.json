@@ -1,0 +1,26 @@
+{
+	"name": "clear01/gpc-generator",
+	"description": "Simple generator for GPC files used by financial institutions.",
+	"minimum-stability": "stable",
+	"license": "proprietary",
+	"keywords": ["gpc"],
+	"authors": [
+		{
+			"name": "Clear01 Development",
+			"email": "development@clear01.com"
+		}
+	],
+    "autoload": {
+        "psr-4": {
+            "Clear01\\Gpc\\Generator\\": "src/"
+        }
+	},	
+	"require-dev": {
+		"nette/tester": "^2.3"
+	},
+	"require": {
+		"php": ">=7.1",
+		"moneyphp/money": "~3.0.0",
+		"brick/math": "^0.8.8"
+	}
+}
