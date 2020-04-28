@@ -9,7 +9,7 @@ use Money\Money;
 
 class BasicTransactionItem implements ITransactionGpcItem
 {
-	const ITEM_TYPE = self::class;
+	const ITEM_TYPE = __CLASS__;
 
 	const SOURCE_ONE_TIME = 0;
 	const SOURCE_RECURRENT = 1;
@@ -143,7 +143,7 @@ class BasicTransactionItem implements ITransactionGpcItem
 
 	public function getItemType(): string
 	{
-		return self::ITEM_TYPE;
+		return static::ITEM_TYPE;
 	}
 
 	public function getPriority(): int
