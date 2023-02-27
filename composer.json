@@ -20,7 +20,7 @@
 	},
 	"require": {
 		"php": ">=7.1",
-		"moneyphp/money": "~3.0.0",
+		"moneyphp/money": "^3.0",
 		"brick/math": "~0.5.4"
 	}
 }
